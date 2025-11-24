@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Saisir le Code - Marché de Printemps</title>
+<link rel="stylesheet" href="style.css"> </head>
+<body>
+  <div class="container">
+    <h2>Vérification du Code</h2>
+    <p>Veuillez entrer le code de vérification envoyé à votre adresse e-mail.</p>
+    <form id="codeForm">
+      <div class="form-group">
+        <label for="resetCode">Code de vérification</label>
+        <input type="text" id="resetCode" placeholder="Ex: 123456" required>
+      </div>
+      <button type="submit">Vérifier le code</button>
+      <div class="actions">
+        <a href="forgot.html">Renvoyer le code</a>
+      </div>
+      <div id="error" class="error"></div>
+    </form>
+  </div>
+  
+  <script src="reset.js"></script> </body>
+</html>

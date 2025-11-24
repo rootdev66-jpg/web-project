@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion - Marché de Printemps</title>
+
+    
+    <link rel="stylesheet" href="login-style.css">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <div class="login-container">
+
+        <div class="header">
+            <h1>🍃 Marché de Printemps</h1>
+            <h2>Connectez-vous à votre compte</h2>
+        </div>
+
+        <form id="loginForm">
+
+            <div id="error-message" class="error-message" style="display: none;"></div>
+
+            <!-- Email -->
+            <div class="form-group">
+                <label for="email">Adresse E-mail</label>
+                <div class="input-icon">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" id="email" name="email" placeholder="votre.email@exemple.fr" required>
+                </div>
+            </div>
+
+            <!-- Mot de passe -->
+            <div class="form-group">
+                <label for="password">Mot de passe</label>
+                <div class="input-icon">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="password" name="password" placeholder="********" required>
+                </div>
+
+                <a href="forgot.html" class="forgot-password">Mot de passe oublié ?</a>
+            </div>
+
+            <!-- Bouton Connexion -->
+            <button type="submit" class="login-button">
+                <i class="fas fa-sign-in-alt"></i> Se connecter
+            </button>
+        </form>
+
+        
+        <div class="footer">
+            <p>Pas encore de compte ? <a href="register.html">Créer un compte</a></p>
+        </div>
+
+    </div>
+<script>
+document.getElementById('loginForm').addEventListener('submit', function(e) {
+    e.preventDefault(); 
+
+    
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    if(email && password) {
+        
+        window.location.href = 'market.html'; 
+    } else {
+        const errorMessage = document.getElementById('error-message');
+        errorMessage.style.display = 'block';
+        errorMessage.textContent = 'Veuillez remplir tous les champs.';
+    }
+});
+</script>
+
+</body>
+</html>

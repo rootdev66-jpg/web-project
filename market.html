@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>🛒 Marché de Printemps</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="market-style.css">
+</head>
+<body>
+<header>
+  <h1>Marché de Printemps</h1>
+  <div id="cart">
+    🛒 Panier (<span id="cart-count">0</span>) - Total: €<span id="cart-total">0.00</span>
+  </div>
+</header>
+
+<main id="products-container"></main>
+
+<section id="cart-section">
+  <h2>Votre Panier</h2>
+  <div id="cart-items"></div>
+</section>
+
+<section id="checkout-section">
+  <button id="checkout-btn">
+    Procéder au Paiement (€<span id="checkout-total">0.00</span>)
+  </button>
+</section>
+
+<script src="market.js"></script>
+<script>
+  // Gestion du bouton de paiement
+  document.getElementById('checkout-btn').addEventListener('click', function() {
+    const cart = JSON.parse(sessionStorage.getItem('cart')) || [];
+    if (cart.length === 0) {
+      alert('Votre panier est vide !');
+      return;
+    }
+    window.location.href = 'payment.html';
+  });
+</script>
+</body>
+</html>

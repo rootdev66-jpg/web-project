@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inscription - Marché de Printemps</title>
+
+<link rel="stylesheet" href="register-style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+</head>
+<body>
+
+<div class="register-container">
+
+    <h1>🌼 Créer un compte</h1>
+    <p class="subtitle">Rejoignez le Marché de Printemps</p>
+
+    <form id="signupForm">
+
+        <div id="error" class="error"></div>
+
+        <!-- Email -->
+        <div class="form-group">
+            <label for="email">Adresse e-mail</label>
+            <div class="input-icon">
+                <i class="fas fa-envelope"></i>
+                <input type="email" id="email" placeholder="votre@mail.com" required>
+            </div>
+        </div>
+
+        <!-- Mot de passe -->
+        <div class="form-group">
+            <label for="password">Mot de passe</label>
+            <div class="input-icon">
+                <i class="fas fa-lock"></i>
+                <input type="password" id="password" placeholder="••••••••" required>
+            </div>
+        </div>
+
+        <!-- Bouton -->
+        <button type="submit" class="register-button">
+            <i class="fas fa-user-plus"></i> S’inscrire
+        </button>
+
+        <div class="actions">
+            <p>Déjà un compte ? <a href="login.html">Se connecter</a></p>
+        </div>
+    </form>
+
+</div>
+
+<script>
+const signupForm = document.getElementById('signupForm');
+const errorBox = document.getElementById('error');
+
+signupForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const email = document.getElementById('email').value.trim();
+    const password = document.getElementById('password').value.trim();
+
+    errorBox.style.display = 'none';
+    errorBox.textContent = '';
+
+    if (!email || !password) {
+        errorBox.textContent = "Tous les champs sont obligatoires.";
+        errorBox.style.display = 'block';
+        return;
+    }
+
+    alert("Compte créé avec succès 🎉");
+    window.location.href = "login.html";
+});
+</script>
+
+</body>
+</html>
