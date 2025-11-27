@@ -23,8 +23,7 @@ class PaymentSystem {
             document.getElementById('payButton').disabled = true;
             return;
         }
-
-        let total = 0;
+        
         orderItems.innerHTML = '';
 
         cart.forEach(item => {
